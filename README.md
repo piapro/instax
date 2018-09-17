@@ -1,2 +1,3 @@
 # instax
-COMP90018 Project
+This is our COMP90018 Android Photo Application Project
+
