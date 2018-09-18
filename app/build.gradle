@@ -29,5 +29,6 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     //Add Animation for the toolbar from extra sources
     implementation 'com.github.ittianyu:BottomNavigationViewEx:1.2.4'
-
+    //For circle profile image
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
 }
