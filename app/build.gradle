@@ -31,4 +31,5 @@ dependencies {
     implementation 'com.github.ittianyu:BottomNavigationViewEx:1.2.4'
     //For circle profile image
     implementation 'de.hdodenhof:circleimageview:2.2.0'
+    apply plugin: 'com.google.gms.google-services'
 }
