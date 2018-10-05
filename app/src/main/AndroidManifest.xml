@@ -20,6 +20,7 @@
         <activity android:name=".ShareComponents.ShareActivity"></activity>
         <activity android:name=".FavoriteComponents.FavoriteActivity"></activity>
         <activity android:name=".ProfileComponents.ProfileActivity"></activity>
+        <activity android:name=".ProfileComponents.AccountActivity"></activity>
 
     </application>
 
