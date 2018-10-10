@@ -1,50 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!--Top Relative Layout for Tool Bar-->
+        <RelativeLayout
+            android:id="@+id/TopLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- This will refer to the layout_top_toolbar.xml file -->
+            <include layout="@layout/layout_top_toolbar" />
+
+        </RelativeLayout>
 
 
-            <!--Top Relative Layout for Tool Bar-->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/TopLayout">
-                <!-- This will refer to the layout_top_toolbar.xml file -->
-                <include layout="@layout/layout_top_toolbar"/>
+        <!--Middle Relative Layout for Content Viewer-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/MiddleLayout"
+            android:layout_below="@+id/TopLayout">
+            <include layout="@layout/layout_middle_contentviewer"/>
 
-                <Button
-                    android:id="@+id/button6"
-                    android:layout_width="184dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginEnd="8dp"
-                    android:background="@color/grey"
-                    android:text="You" />
+        </RelativeLayout>
 
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="187dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:background="@color/grey"
-                    android:text="Followed" />
-
-            </RelativeLayout>
-
+        <!--Bottom Relative Layout for Navigation Bar-->
+        <include layout="@layout/layout_bottom_navibar"/>
 
     </RelativeLayout>
 
-    <include layout="@layout/layout_bottom_navibar"/>
-
-
-
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
 
