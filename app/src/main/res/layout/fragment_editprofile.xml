@@ -4,35 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/layout_center_view"/>
-
     <RelativeLayout
-        android:id="@+id/rlayout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:id="@+id/rlayout2"
+            android:id="@+id/rlLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/top_account_setting_toolbar"/>
+            <include layout="@layout/top_editprofile_toolbar" />
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/rlayout3"
+            android:id="@+id/rlLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/rlayout2"
-            android:layout_marginBottom="50dp">
+            android:layout_below="@+id/rlLayout1">
 
-            <include layout="@layout/centre_account_setting"/>
+            <include layout="@layout/center_editprofile" />
 
         </RelativeLayout>
 
-        <include layout="@layout/layout_bottom_navibar"/>
 
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
+
