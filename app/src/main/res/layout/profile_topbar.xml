@@ -10,7 +10,7 @@
           android:id="@+id/profile_toolbar"
           android:layout_height="match_parent"
           android:layout_width="match_parent"
-          android:background="@drawable/canvas_top_toolbar">
+          android:background="@drawable/canvas_bottom_navibar">
 
           <RelativeLayout
               android:layout_height="wrap_content"

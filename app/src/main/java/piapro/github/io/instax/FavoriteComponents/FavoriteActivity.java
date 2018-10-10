@@ -19,7 +19,7 @@ public class FavoriteActivity extends AppCompatActivity{
     //Alt+Insert open Generate Method
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_like);
         Log.d(TAG, "onCreate: Started");
         bottomNavigationViewSetup();
     }

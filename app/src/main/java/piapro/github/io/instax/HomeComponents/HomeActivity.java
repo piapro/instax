@@ -1,5 +1,6 @@
 package piapro.github.io.instax.HomeComponents;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -7,30 +8,37 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
-import android.widget.TableLayout;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import piapro.github.io.instax.R;
 import piapro.github.io.instax.utilities.BottomNavigationViewHelper;
+import piapro.github.io.instax.utilities.LoadUniversalImage;
+import piapro.github.io.instax.utilities.TabsPagerAdapter;
 
 public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "HomeActivity";
     private static final int ACTIVITY = 0;
 
+    private Context hContext = HomeActivity.this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Log.d(TAG, "onCreate: Starting...");
 
+        initImageLoader();
         bottomNavigationViewSetup();
         viewPagerSetup();
 
     }
+
+    private void initImageLoader(){
+        LoadUniversalImage loadUniversalImage = new LoadUniversalImage(hContext);
+        ImageLoader.getInstance().init(loadUniversalImage.getConfig());
+    }
+
     /**
      * Setup Top Toolbar Tabs
      */
