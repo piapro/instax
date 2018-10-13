@@ -1,4 +1,4 @@
-package piapro.github.io.instax.HomeComponents;
+package piapro.github.io.instax.utilities;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

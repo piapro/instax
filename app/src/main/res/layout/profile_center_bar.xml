@@ -3,90 +3,125 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
-        android:id="@+id/profile_whole"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <RelativeLayout
-            android:id="@+id/profile_top_bar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
-
-            <include layout="@layout/profile_topbar" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/profile_center"
+            android:id="@+id/rllayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/profile_top_bar">
+            android:layout_below="@id/rlLayout1"
+            android:background="@drawable/canvas_bottom_navibar">
 
-            <RelativeLayout
+            <LinearLayout
+                android:id="@+id/lineLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="2">
+                android:orientation="horizontal">
 
+<<<<<<< HEAD
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/avatar"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_centerInParent="true"/>
+=======
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="25dp">
+>>>>>>> 88958b9bfcf454ceff54a6e88d388de8d3c602f6
 
-            </RelativeLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerInParent="true"
+                        app:civ_border_color="@color/black"
+                        app:civ_border_width="2dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/profile_center_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp">
+
+                    <include layout="@layout/top_profile_info"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lineLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lineLayout1"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/profile_center_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:text="Chris Li"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/profile_center_bio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:text="I live in Melbourne, AUS"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:id="@+id/profile_center_web"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:text="https://chrisli.com"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"/>
+
+
+
+            </LinearLayout>
 
             <RelativeLayout
-                android:id="@+id/profile_center_bar"
+                android:id="@+id/rllayout3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_height="322dp"
+                android:layout_below="@id/lineLayout2"
+                android:layout_marginBottom="50dp">
 
-                <include layout="@layout/top_profile_info"/>
+                <GridView
+                    android:id="@+id/profile_grid_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:horizontalSpacing="1dp"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="1dp">
+
+                </GridView>
+
             </RelativeLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/profile_center_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profile_center">
-
-            <TextView
-                android:id="@+id/profile_center_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:text="Chris Li"
-                android:layout_marginLeft="10dp"/>
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profile_center_info"
-            android:layout_marginBottom="50dp">
-
-            <GridView
-                android:id="@+id/profile_grid_photo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:numColumns="3"
-                android:stretchMode="columnWidth"
-                android:verticalSpacing="2dp"
-                android:horizontalSpacing="2dp"
-                android:gravity="center">
-
-            </GridView>
-
         </RelativeLayout>
-
 
     </RelativeLayout>
 

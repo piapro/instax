@@ -31,5 +31,17 @@ dependencies {
     implementation 'com.github.ittianyu:BottomNavigationViewEx:1.2.4'
     //For circle profile image
     implementation 'de.hdodenhof:circleimageview:2.2.0'
-    apply plugin: 'com.google.gms.google-services'
+
+    //firebase authentication
+    compile 'com.google.firebase:firebase-auth:10.2.6'
+
+    //firebase database
+    compile 'com.google.firebase:firebase-database:10.2.6'
+
+    //for loading Universal image
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+
 }
+
+apply plugin: 'com.google.gms.google-services'
