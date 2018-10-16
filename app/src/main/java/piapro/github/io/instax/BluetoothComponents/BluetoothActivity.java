@@ -86,8 +86,6 @@ public class BluetoothActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bluetooth);
         Log.d(TAG, "onCreate: Starting...");
-
-        setContentView(R.layout.activity_main);
         findViewByIdes();
         bottomNavigationViewSetup();
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
