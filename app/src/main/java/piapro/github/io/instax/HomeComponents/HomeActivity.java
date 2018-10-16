@@ -45,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     private void viewPagerSetup(){
         TabsPagerAdapter pagerAdapter = new TabsPagerAdapter(getSupportFragmentManager());
         //Add fragments to the Tab;
-        pagerAdapter.addFragment(new CameraFragment());
+        //pagerAdapter.addFragment(new CameraFragment());
         pagerAdapter.addFragment(new HomeFragment());
         pagerAdapter.addFragment(new DirectFragment());
 
@@ -55,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.topTabs);
         tabLayout.setupWithViewPager(viewPager);
         //Set icon for tabs
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_camera);
+        //tabLayout.getTabAt(0).setIcon(R.drawable.ic_camera);
         //tabLayout.getTabAt(1).setIcon(R.drawable.ic_instax);
         tabLayout.getTabAt(1).setText("instax");
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_direct);
