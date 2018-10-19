@@ -1,6 +1,7 @@
 package piapro.github.io.instax.BluetoothComponents;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -79,6 +80,8 @@ public class BluetoothActivity extends AppCompatActivity {
     private static final int RESULT_LOAD_IMAGE = 1;
 
     private Context hContext = piapro.github.io.instax.BluetoothComponents.BluetoothActivity.this;
+    private Bitmap bitmap;
+    private BitmapDrawable bitmapDrawable;
 
 
     @Override
@@ -86,8 +89,6 @@ public class BluetoothActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bluetooth);
         Log.d(TAG, "onCreate: Starting...");
-
-        setContentView(R.layout.activity_main);
         findViewByIdes();
         bottomNavigationViewSetup();
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -245,16 +246,27 @@ public class BluetoothActivity extends AppCompatActivity {
         btn_Send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //String caption = mCaption.setText("From Bluetooth").toString(); show hash tag as BT
+                //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.test1);
 
-
-                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.test1);
+                // Retrieve image from imageView to bitmap
+                bitmapDrawable = ((BitmapDrawable) imageView.getDrawable());
+                if(bitmapDrawable==null){
+                    imageView.buildDrawingCache();
+                    bitmap = imageView.getDrawingCache();
+                    imageView.buildDrawingCache(false);
+                }else
+                {
+                    bitmap = bitmapDrawable .getBitmap();
+                }
+                //Convert bitmap to stream
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG,50,stream);
                 byte[] imageBytes = stream.toByteArray();
 
                 int subArraySize = 400;
                 btCommunication.write(String.valueOf(imageBytes.length).getBytes());
-
+                //Write to the receiver
                 for(int i = 0; i < imageBytes.length; i += subArraySize){
                     byte[] tempArray;
                     tempArray = Arrays.copyOfRange(imageBytes, i, Math.min(imageBytes.length, i + subArraySize));

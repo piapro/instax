@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
+import piapro.github.io.instax.BluetoothComponents.BluetoothActivity;
 import piapro.github.io.instax.FavoriteComponents.FavoriteActivity;
 import piapro.github.io.instax.HomeComponents.HomeActivity;
 import piapro.github.io.instax.ProfileComponents.ProfileActivity;
@@ -55,6 +56,12 @@ public class BottomNavigationViewHelper {
                         Intent intentProfile = new Intent(context, ProfileActivity.class);//ACTIVITY=4
                         context.startActivity(intentProfile);
                         break;
+
+                    case R.id.ic_bluetooth:
+                        Intent intentBluetooth = new Intent(context, BluetoothActivity.class);//ACTIVITY=5
+                        context.startActivity(intentBluetooth);
+                        break;
+
 
                 }
                 return false;
